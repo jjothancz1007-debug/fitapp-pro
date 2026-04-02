@@ -1,4 +1,4 @@
-const API = "";
+const API = "https://fitapp-pro.onrender.com";
 
 const usuarioInput = document.getElementById("usuario");
 const passwordInput = document.getElementById("password");
@@ -58,7 +58,7 @@ btnRegistro.addEventListener("click", async () => {
   msg.textContent = "";
 
   try {
-    const res = await fetch("/api/registro", {
+    const res = await fetch(`${API}/api/registro`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ usuario, password })
@@ -79,5 +79,6 @@ btnRegistro.addEventListener("click", async () => {
     loader.style.display = "none";
     msg.textContent = "No se pudo conectar con el servidor";
     msg.style.color = "red";
+    console.log(error);
   }
 });
