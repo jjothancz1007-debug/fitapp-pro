@@ -1,0 +1,261 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition: background .3s, color .3s;
+}
+
+body.dark {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+body.light {
+  background: #f3f5fb;
+  color: #111827;
+}
+
+.topbar {
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+body.dark .topbar {
+  background: #111827;
+}
+
+body.light .topbar {
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mini-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #2563eb;
+  color: white;
+}
+
+.topnav {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.topnav a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+body.dark .topnav a {
+  color: white;
+}
+
+body.light .topnav a {
+  color: #111827;
+}
+
+.tema-btn {
+  width: auto;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+.contenedor {
+  max-width: 1300px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.perfil-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.card {
+  border-radius: 18px;
+  padding: 30px;
+}
+
+body.dark .card {
+  background: #111827;
+}
+
+body.light .card {
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.perfil-head {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.avatar-perfil {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 42px;
+  border: 3px solid #2563eb;
+}
+
+body.dark .avatar-perfil {
+  background: #1f2937;
+}
+
+body.light .avatar-perfil {
+  background: #eef2ff;
+}
+
+.perfil-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+body.dark input,
+body.dark select {
+  background: #0b1220;
+  color: #e5e7eb;
+  border: 1px solid #374151;
+}
+
+body.light input,
+body.light select {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #d1d5db;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.mensaje {
+  min-height: 24px;
+}
+
+.seguridad-box {
+  margin-top: 10px;
+}
+
+.password-box {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.password-box input {
+  padding-right: 60px;
+}
+
+.btn-ver {
+  position: absolute;
+  right: 8px;
+  top: 10px;
+  width: auto;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 10px;
+  background: #64748b;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-secundario {
+  background: #0ea5e9;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-danger {
+  background: #dc2626;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.danger-title {
+  margin-top: 18px;
+  color: #ef4444;
+}
+
+.danger-text {
+  opacity: 0.9;
+}
+
+hr {
+  margin: 20px 0;
+  border: none;
+  height: 1px;
+  background: rgba(148, 163, 184, 0.35);
+}
+
+@media (max-width: 1000px) {
+  .perfil-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .perfil-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contenedor {
+    padding: 14px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}

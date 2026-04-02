@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil</title>
+  <link rel="stylesheet" href="CSS/perfil.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="mini-logo">👤</div>
+      <h1>Perfil</h1>
+    </div>
+
+    <nav class="topnav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="historial.html">Historial</a>
+      <a href="#" id="logout">Cerrar sesión</a>
+      <button id="toggleTema" class="tema-btn">🌙</button>
+    </nav>
+  </header>
+
+  <main class="contenedor">
+    <section class="perfil-layout">
+      <section class="card">
+        <div class="perfil-head">
+          <div class="avatar-perfil" id="avatarUsuario">👤</div>
+          <div>
+            <h2>Mi información</h2>
+            <p>Actualiza tus datos personales</p>
+          </div>
+        </div>
+
+        <div class="perfil-grid">
+          <div>
+            <label>Usuario</label>
+            <input id="usuario" type="text" disabled>
+
+            <label>Edad</label>
+            <input id="edad" type="number" placeholder="Edad">
+
+            <label>Peso (kg)</label>
+            <input id="peso" type="number" placeholder="Peso">
+          </div>
+
+          <div>
+            <label>Altura (m)</label>
+            <input id="altura" type="number" step="0.01" placeholder="Altura">
+
+            <label>Sexo</label>
+            <select id="sexo">
+              <option value="hombre">Hombre</option>
+              <option value="mujer">Mujer</option>
+            </select>
+
+            <label>Objetivo</label>
+            <select id="objetivo">
+              <option value="bajar">Bajar peso</option>
+              <option value="subir">Subir masa</option>
+              <option value="mantener">Mantener</option>
+            </select>
+          </div>
+        </div>
+
+        <button id="btnGuardarPerfil">Guardar cambios</button>
+        <p id="mensaje" class="mensaje"></p>
+      </section>
+
+      <section class="card">
+        <h2>Seguridad</h2>
+
+        <div class="seguridad-box">
+          <label>Contraseña actual</label>
+          <div class="password-box">
+            <input id="passwordActual" type="password" placeholder="Escribe tu contraseña actual">
+            <button type="button" id="verActual" class="btn-ver">👁</button>
+          </div>
+
+          <button id="btnVerificarPassword" class="btn-secundario">Verificar contraseña</button>
+          <p id="mensajePassword" class="mensaje"></p>
+
+          <hr>
+
+          <label>Nueva contraseña</label>
+          <div class="password-box">
+            <input id="passwordNueva" type="password" placeholder="Nueva contraseña">
+            <button type="button" id="verNueva" class="btn-ver">👁</button>
+          </div>
+
+          <button id="btnCambiarPassword">Cambiar contraseña</button>
+          <p id="mensajeCambio" class="mensaje"></p>
+
+          <hr>
+
+          <h3 class="danger-title">Zona peligrosa</h3>
+          <p class="danger-text">Eliminar tu cuenta también borrará tus rutinas guardadas.</p>
+          <button id="btnEliminarCuenta" class="btn-danger">Eliminar cuenta</button>
+          <p id="mensajeEliminar" class="mensaje"></p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="js/perfil.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="CSS/dashboard.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo-box">
+        <div class="logo-circle">🏋️</div>
+        <div>
+          <h2>FitApp Pro</h2>
+          <p>Panel principal</p>
+        </div>
+      </div>
+
+      <nav class="menu">
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="perfil.html">Perfil</a>
+        <a href="historial.html">Historial</a>
+        <a href="#" id="logout">Cerrar sesión</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 id="saludo"></h1>
+          <p class="motivacion" id="motivacion"></p>
+        </div>
+
+        <div class="topbar-right">
+          <button id="toggleTema" class="tema-btn">🌙</button>
+          <div class="avatar" id="avatar">👤</div>
+        </div>
+      </header>
+
+      <section class="stats-grid">
+        <div class="stat-card purple">
+          <span class="stat-icon">📚</span>
+          <h3>Rutinas</h3>
+          <p id="rutinasTotales">0</p>
+        </div>
+
+        <div class="stat-card orange">
+          <span class="stat-icon">🔥</span>
+          <h3>Calorías</h3>
+          <p id="caloriasTotales">0</p>
+        </div>
+
+        <div class="stat-card teal">
+          <span class="stat-icon">📏</span>
+          <h3>Mejor IMC</h3>
+          <p id="mejorImc">0</p>
+        </div>
+
+        <div class="stat-card blue">
+          <span class="stat-icon">📅</span>
+          <h3>Racha</h3>
+          <p id="rachaDias">0</p>
+        </div>
+      </section>
+
+      <section class="grid-2">
+        <div class="panel">
+          <h2>Datos para generar rutina</h2>
+
+          <label>Edad</label>
+          <input id="edad" type="number" placeholder="Edad">
+          <small id="errorEdad" class="error-text"></small>
+
+          <label>Peso (kg)</label>
+          <input id="peso" type="number" placeholder="Peso">
+          <small id="errorPeso" class="error-text"></small>
+
+          <label>Altura (m)</label>
+          <input id="altura" type="number" step="0.01" placeholder="Ejemplo: 1.70">
+          <small id="errorAltura" class="error-text"></small>
+
+          <label>Sexo</label>
+          <select id="sexo">
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+          </select>
+
+          <label>Objetivo</label>
+          <select id="objetivo">
+            <option value="bajar">Bajar peso</option>
+            <option value="subir">Subir masa</option>
+            <option value="mantener">Mantener</option>
+          </select>
+
+          <button id="gen">Generar rutina</button>
+        </div>
+
+        <div class="panel">
+          <h2>Resultado</h2>
+          <p id="imc">IMC: --</p>
+          <p id="clasificacion">Clasificación: --</p>
+          <p id="caloriasDia">Calorías estimadas: --</p>
+
+          <ul id="rutina"></ul>
+
+          <button id="save">Guardar rutina</button>
+          <p id="msg" class="mensaje"></p>
+        </div>
+      </section>
+
+      <section class="charts-grid">
+        <div class="panel">
+          <h2>Vista rápida</h2>
+          <div class="chart-box">
+            <canvas id="graficaIMC"></canvas>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Distribución</h2>
+          <div class="chart-box">
+            <canvas id="graficaRutina"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Días activos del mes</h2>
+        <div id="calendarioHeader" class="calendario-header"></div>
+        <div id="calendarioSemana" class="calendario-semana"></div>
+        <div id="calendario" class="calendario"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

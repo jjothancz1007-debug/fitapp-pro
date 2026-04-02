@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historial</title>
+  <link rel="stylesheet" href="CSS/historial.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="mini-logo">📊</div>
+      <div>
+        <h1>Historial</h1>
+        <p class="brand-sub">Tus rutinas guardadas y progreso</p>
+      </div>
+    </div>
+
+    <nav class="topnav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="perfil.html">Perfil</a>
+      <a href="#" id="logout">Cerrar sesión</a>
+      <button id="toggleTema" class="tema-btn" type="button">🌙</button>
+    </nav>
+  </header>
+
+  <main class="contenedor">
+    <section class="hero card">
+      <div class="hero-left">
+        <h2>Resumen general</h2>
+        <p>Consulta, busca, elimina y exporta tus rutinas en PDF.</p>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-badge">FitApp Pro</div>
+      </div>
+    </section>
+
+    <section class="card herramientas">
+      <input
+        id="filtroTexto"
+        type="text"
+        placeholder="Buscar por objetivo, edad o sexo"
+      >
+      <button id="btnPdf" type="button">Exportar PDF</button>
+    </section>
+
+    <section class="historial-grid">
+      <section class="card">
+        <h2>Rutinas guardadas</h2>
+        <div id="historial" class="lista-rutinas"></div>
+      </section>
+
+      <section class="card">
+        <h2>Resumen</h2>
+        <div id="resumenBox" class="resumen-box"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="js/historial.js"></script>
+</body>
+</html>

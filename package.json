@@ -1,0 +1,14 @@
+{
+  "name": "fitapp-pro",
+  "version": "1.0.0",
+  "description": "Sistema fitness con Node, Express y MongoDB",
+  "main": "backend/serve.js",
+  "scripts": {
+    "start": "node backend/serve.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5"
+  }
+}
