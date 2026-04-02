@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const crypto = require("crypto");
+const path = require("path");
 
 const app = express();
 
@@ -12,7 +13,6 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB conectado 🔥"))
   .catch(err => console.log("Error MongoDB:", err));
 
-  
 const usuarioSchema = new mongoose.Schema({
   usuario: { type: String, required: true, unique: true, trim: true },
   password: { type: String, required: true, trim: true },
@@ -562,6 +562,22 @@ app.get("/api/progreso/:usuario", async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log("Servidor en http://127.0.0.1:3000");
+/* =========================
+   SERVIR FRONTEND
+========================= */
+
+app.use(express.static(path.join(__dirname, "..")));
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "index.html"));
+});
+
+/* =========================
+   SERVIDOR
+========================= */
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Servidor en puerto ${PORT}`);
 });
