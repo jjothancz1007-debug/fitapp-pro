@@ -1,4 +1,4 @@
-const API = "http://127.0.0.1:3000";
+const API = "";
 
 const usuarioInput = document.getElementById("usuario");
 const passwordInput = document.getElementById("password");
@@ -58,7 +58,7 @@ btnRegistro.addEventListener("click", async () => {
   msg.textContent = "";
 
   try {
-    const res = await fetch(API + "/api/registro", {
+    const res = await fetch("/api/registro", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ usuario, password })

@@ -1,4 +1,4 @@
-const API = "http://127.0.0.1:3000";
+const API = "";
 const user = localStorage.getItem("usuario");
 
 if (!user) {
@@ -71,7 +71,7 @@ sexoInput.addEventListener("change", () => {
 
 async function cargarPerfil() {
   try {
-    const res = await fetch(API + "/api/perfil/" + user);
+    const res = await fetch("/api/perfil/" + user);
     const data = await res.json();
 
     if (!data.ok) {
@@ -119,7 +119,7 @@ btnGuardarPerfil.addEventListener("click", async () => {
   }
 
   try {
-    const res = await fetch(API + "/api/perfil/" + user, {
+    const res = await fetch("/api/perfil/" + user, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ edad, peso, altura, sexo, objetivo })
@@ -152,7 +152,7 @@ btnVerificarPassword.addEventListener("click", async () => {
   }
 
   try {
-    const res = await fetch(API + "/api/verificar-password/" + user, {
+    const res = await fetch("/api/verificar-password/" + user, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ password })
@@ -184,7 +184,7 @@ btnCambiarPassword.addEventListener("click", async () => {
   }
 
   try {
-    const res = await fetch(API + "/api/password/" + user, {
+    const res = await fetch("/api/password/" + user, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ actual, nueva })
@@ -217,7 +217,7 @@ btnEliminarCuenta.addEventListener("click", async () => {
   if (!confirmar) return;
 
   try {
-    const res = await fetch(API + "/api/usuario/eliminar/" + user, {
+    const res = await fetch("/api/usuario/eliminar/" + user, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ password })

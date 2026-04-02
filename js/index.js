@@ -1,4 +1,4 @@
-const API = "http://127.0.0.1:3000";
+const API = "";
 
 const usuarioInput = document.getElementById("usuario");
 const passwordInput = document.getElementById("password");
@@ -46,7 +46,7 @@ btnLogin.addEventListener("click", async () => {
   msg.textContent = "";
 
   try {
-    const res = await fetch(API + "/api/login", {
+    const res = await fetch("/api/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ usuario, password })

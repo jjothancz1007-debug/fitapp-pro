@@ -1,4 +1,4 @@
-const API = "http://127.0.0.1:3000";
+const API = "";
 const user = localStorage.getItem("usuario");
 
 if (!user) {
@@ -75,7 +75,7 @@ async function eliminarRutina(id) {
     const idLimpio = String(id).trim();
     console.log("Eliminando ID por POST:", idLimpio);
 
-    const res = await fetch(`${API}/api/rutina/eliminar`, {
+    const res = await fetch("/api/rutina/eliminar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -288,7 +288,7 @@ if (btnPdf) {
 
 async function cargarHistorial() {
   try {
-    const res = await fetch(`${API}/api/historial/${user}`);
+    const res = await fetch("/api/historial/" + user);
     const data = await res.json();
 
     console.log("Historial cargado:", data);

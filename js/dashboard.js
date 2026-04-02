@@ -1,4 +1,4 @@
-const API = "http://127.0.0.1:3000";
+const API = "";
 const user = localStorage.getItem("usuario");
 
 if (!user) {
@@ -301,7 +301,7 @@ save.addEventListener("click", async () => {
   }
 
   try {
-    const res = await fetch(API + "/api/rutina", {
+    const res = await fetch("/api/rutina", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -336,7 +336,7 @@ save.addEventListener("click", async () => {
 
 async function cargarPerfil() {
   try {
-    const res = await fetch(API + "/api/perfil/" + user);
+    const res = await fetch("/api/perfil/" + user);
     const data = await res.json();
 
     if (!data.ok) return;
@@ -354,7 +354,7 @@ async function cargarPerfil() {
 
 async function cargarProgreso() {
   try {
-    const res = await fetch(API + "/api/progreso/" + user);
+    const res = await fetch("/api/progreso/" + user);
     const data = await res.json();
 
     if (!data.ok) return;
