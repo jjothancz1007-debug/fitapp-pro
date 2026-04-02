@@ -8,14 +8,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect("mongodb://127.0.0.1:27017/fitappPro")
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB conectado 🔥"))
-  .catch((err) => console.log("Error MongoDB:", err));
+  .catch(err => console.log("Error MongoDB:", err));
 
-/* =========================
-   ESQUEMAS
-========================= */
-
+  
 const usuarioSchema = new mongoose.Schema({
   usuario: { type: String, required: true, unique: true, trim: true },
   password: { type: String, required: true, trim: true },
